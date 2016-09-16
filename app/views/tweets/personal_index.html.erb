@@ -1,0 +1,12 @@
+<h1>Tweets#personal_index</h1>
+<p>Find me in app/views/tweets/personal_index.html.erb</p>
+
+<% for tweet in @tweets do %>
+  <p>
+      <%= link_to "@" + tweet.user.handle, user_path(tweet.user.handle) %> <%= time_ago_in_words tweet.created_at %> <br >
+  </p>
+  <p>
+      <%= tweet.content %> <br >
+  </p>
+
+  <% end %>

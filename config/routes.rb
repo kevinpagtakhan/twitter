@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new', as: 'signup'
   post '/users' => 'users#create'
 
+  get '/user/:handle' => 'tweets#personal_index', as: 'user'
+
   resources :tweets, except: [:new, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.

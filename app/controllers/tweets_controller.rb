@@ -6,6 +6,11 @@ class TweetsController < ApplicationController
     @tweet = Tweet.new
   end
 
+  def personal_index
+    @tweets = User.find_by(handle: params[:handle]).tweets
+    @tweet = Tweet.new
+  end
+
   def show
     @tweet = Tweet.find(params[:id])
   end

@@ -5,7 +5,7 @@
 
 <% for tweet in @tweets do %>
   <p>
-    @<%= tweet.user.handle %> <%= time_ago_in_words tweet.created_at %>
+    <%= link_to "@" + tweet.user.handle, user_path(tweet.user.handle) %> <%= time_ago_in_words tweet.created_at %>
   </p>
   <p>
     <%= link_to tweet.content, tweet %>
