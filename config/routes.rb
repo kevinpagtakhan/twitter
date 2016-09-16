@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  root 'tweets#index'
 
   get '/login' => 'sessions#new', as: 'login'
   post '/login' => 'sessions#create'
@@ -7,6 +8,8 @@ Rails.application.routes.draw do
 
   get '/signup' => 'users#new', as: 'signup'
   post '/users' => 'users#create'
+
+  resources :tweets, except: [:new, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

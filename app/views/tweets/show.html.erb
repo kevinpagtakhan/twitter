@@ -1,0 +1,9 @@
+<h1>Tweets#show</h1>
+<p>Find me in app/views/tweets/show.html.erb</p>
+
+<p>
+  @<%= @tweet.user.handle %> <%= time_ago_in_words @tweet.created_at %>
+</p>
+<p>
+  <%= @tweet.content %>
+</p>
