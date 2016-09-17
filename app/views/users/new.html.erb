@@ -1,11 +1,15 @@
 <h1>Users#new</h1>
 <p>Find me in app/views/users/new.html.erb</p>
 
+<div class="col-md-3"></div>
+<div class="col-md-6">
 <%= form_for :user, url: 'users/' do |f| %>
-  Full Name: <%= f.text_field :full_name %> <br />
-  Username: <%= f.text_field :handle %> <br />
-  Password: <%= f.password_field :password %> <br />
-  Confirm Password: <%= f.password_field :password_confirmation %> <br />
-  Bio: <%= f.text_area :bio %> <br />
-  <%= f.submit "Sign Up" %>
+  Full Name: <%= f.text_field :full_name, class: "form-control" %> <br />
+  Username: <%= f.text_field :handle, class: "form-control" %> <br />
+  Password: <%= f.password_field :password, class: "form-control" %> <br />
+  Confirm Password: <%= f.password_field :password_confirmation, class: "form-control" %> <br />
+  Bio: <%= f.text_area :bio, class: "form-control"  %> <br />
+  <%= f.submit "Sign Up", class: "btn btn-primary"  %>
 <% end %>
+</div>
+<div class="col-md-3"></div>

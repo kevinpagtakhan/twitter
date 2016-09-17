@@ -1,12 +1,17 @@
 <h1>Tweets#personal_index</h1>
 <p>Find me in app/views/tweets/personal_index.html.erb</p>
 
+<%= render 'form' %>
+
+<hr>
+
 <% for tweet in @tweets do %>
   <p>
-      <%= link_to "@" + tweet.user.handle, user_path(tweet.user.handle) %> <%= time_ago_in_words tweet.created_at %> <br >
+      <%= link_to "@" + tweet.user.handle, user_path(tweet.user.handle) %> wrote <%= time_ago_in_words tweet.created_at %> ago <br > 
   </p>
-  <p>
+  <h3>
       <%= tweet.content %> <br >
-  </p>
+  </h3>
+  <br>
 
   <% end %>

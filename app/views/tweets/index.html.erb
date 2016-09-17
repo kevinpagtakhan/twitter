@@ -3,11 +3,17 @@
 
 <%= render 'form' %>
 
+<hr>
+
 <% for tweet in @tweets do %>
-  <p>
-    <%= link_to "@" + tweet.user.handle, user_path(tweet.user.handle) %> <%= time_ago_in_words tweet.created_at %>
-  </p>
-  <p>
-    <%= link_to tweet.content, tweet %>
-  </p>
+  <div class="">
+    <p>
+      <%= link_to "@" + tweet.user.handle, user_path(tweet.user.handle) %> wrote <%= time_ago_in_words tweet.created_at %> ago
+    </p>
+    <h3>
+      <%= tweet.content %>
+    </h3>
+    <br>
+  </div>
+
 <% end %>
